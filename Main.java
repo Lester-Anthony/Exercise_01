@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+
 public class Main {
     public static void main(String[] args) {
 
@@ -7,10 +8,10 @@ public class Main {
         boolean error = false;
 
         Scanner sc = new Scanner(System.in);
-        // do while scan loop
         
         System.out.print("Enter date : ");
         
+        // Checks validity of input.
         do {
             error = false;
 
@@ -25,7 +26,7 @@ public class Main {
             nMonth = Integer.parseInt(date[0]);
             if (nMonth < 1 || nMonth > 12) {
                 error = true;
-                System.out.println("Invalid Month. ");
+                System.out.println("Invalid Month.");
             }
             // System.out.println(nMonth);
             
@@ -42,17 +43,16 @@ public class Main {
                 (nMonth == 9 && nDay > 30) || 
                 (nMonth == 10 && nDay > 31) || 
                 (nMonth == 11 && nDay > 30) || 
-                (nMonth == 12 && nDay > 31) 
-               ) {
+                (nMonth == 12 && nDay > 31)) {
                 error = true;
-                System.out.println("Invalid Day. ");
+                System.out.println("Invalid Day.");
             }
             // System.out.println(nDay);
             
             nYear = Integer.parseInt(date[2]);
             if (nYear < 0 || (nYear > 99 && nYear < 999)) {
                 error = true;
-                System.out.println("Invalid Year. ");
+                System.out.println("Invalid Year.");
             }
             // System.out.println(nYear);
             
@@ -66,6 +66,8 @@ public class Main {
         
         Month m = new Month();
 
+        // Prints the final date message.
+        System.out.println("");
         System.out.println(m.getMonthName(nMonth) + " " + nDay + ", " + nYear); 
 
         sc.close();
