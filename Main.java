@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
 
         int nMonth, nDay, nYear;
@@ -20,6 +19,16 @@ public class Main {
         System.out.println(nMonth);
         System.out.println(nDay);
         System.out.println(nYear);
+
+        if(nYear < 100) {
+            nYear += 2000;
+        }
+
+        Month m = new Month();
+
+        System.out.println(m.getMonthName(nMonth) + " " + nDay + ", " + nYear); 
+
+        sc.close();
     }
 }
 
