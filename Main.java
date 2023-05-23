@@ -1,7 +1,23 @@
 import java.util.Scanner;
 
-
 public class Main {
+    
+    /**
+     * Returns the three-character month name corresponding to an month integer.
+     * <p>
+     * @param nMonth an integer equivalent of a month.
+     * @return       the corresponding three-character month name. 
+     */
+    public static String getMonthName(int nMonth) {
+        
+        String[] sMonth = {"Jan", "Feb", "Mar",
+        "Apr", "May", "Jun",
+        "Jul", "Aug", "Sep",
+        "Oct", "Nov", "Dec"};
+        
+        return sMonth[nMonth - 1];
+    } 
+
     public static void main(String[] args) {
 
         int nMonth, nDay, nYear;
@@ -57,18 +73,18 @@ public class Main {
             // System.out.println(nYear);
             
             if (error == true)
-                System.out.println("Enter date (mm-dd-yy/yyyy) : ");
+                System.out.print("Enter date (mm-dd-yy/yyyy) : ");
         } while (error == true);
         
         if(nYear < 100) {
             nYear += 2000;
         }
         
-        Month m = new Month();
+        // Month m = new Month();
 
         // Prints the final date message.
         System.out.println("");
-        System.out.println(m.getMonthName(nMonth) + " " + nDay + ", " + nYear); 
+        System.out.println(getMonthName(nMonth) + " " + nDay + ", " + nYear); 
 
         sc.close();
     }
