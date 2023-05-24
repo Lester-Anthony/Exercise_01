@@ -85,7 +85,7 @@ public class Main {
         // Prints the final date message.
         System.out.println("");
         System.out.println(getMonthName(nMonth) + " " + nDay + ", " + nYear); 
-
+        
         sc.close();
     }
 }
